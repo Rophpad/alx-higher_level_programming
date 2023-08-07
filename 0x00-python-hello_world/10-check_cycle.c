@@ -10,16 +10,13 @@
 int check_cycle(listint_t *list)
 {
 	listint_t **firstNodeAddress = &list;
-	listint_t *current;
+	listint_t *current = list;
 
-	if (list == NULL || list->next == NULL)
-		return (0);
-	current = list->next;
 	while (current)
 	{
+		current = current->next;
 		if (current == *firstNodeAddress)
 			return (1);
-		current = current->next;
 	}
 	return (0);
 }
