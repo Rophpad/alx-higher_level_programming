@@ -5,4 +5,4 @@ while (asciiValue <= ord('z')):
     letter = chr(asciiValue)
     alphabet += letter
     asciiValue += 1
-print(f'{alphabet}', end='')
+print("{}".format(alphabet), end='')
