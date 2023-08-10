@@ -9,14 +9,16 @@
  */
 int check_cycle(listint_t *list)
 {
-	listint_t **firstNodeAddress = &list;
-	listint_t *current = list;
+	listint_t *normal = list;
+	listint_t *inAdvance = list;
 
-	while (current)
+	while (normal && inAdvance && inAdvance->next)
 	{
-		current = current->next;
-		if (current == *firstNodeAddress)
+		normal = normal->next;
+		inAdvance = inAdvance->next->next;
+		if (normal == inAdvance)
 			return (1);
 	}
+
 	return (0);
 }
