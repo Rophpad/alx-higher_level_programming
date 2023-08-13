@@ -8,5 +8,5 @@ def add_tuple(tuple_a=(), tuple_b=()):
     if len(tuple_b) == 1:
         c = tuple_b[0]
     elif len(tuple_b) >= 2:
-         c, d = tuple_b[:2]
+        c, d = tuple_b[:2]
     return (a + c, b + d)
