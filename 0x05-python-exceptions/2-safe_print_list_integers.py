@@ -8,9 +8,9 @@ def safe_print_list_integers(my_list=[], x=0):
             if i == x:
                 print('')
                 return i
-        except (TypeError, ValueError)
+        except (TypeError, ValueError):
             i += 1
             not_int += 1
-            if i == x
+            if i == x:
                 print('')
-                return not_int
+                return (i - not_int)
