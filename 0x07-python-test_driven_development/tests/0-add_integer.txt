@@ -13,13 +13,13 @@ that value is equivalent to using the `+` operator.
 ::
 
     >>> add_integer = __import__('0-add_integer').add_integer
-    >>> add_integer(2, 3)
-    5
+    >>> add_integer(1, 3)
+    4
 
 ::
 
-    >>> add_integer(2, -3)
-    -1
+    >>> add_integer(2, -10)
+    -8
 
 The function also works with floating-point values.
 
@@ -37,8 +37,8 @@ Note that floats are casted to ints before addition is performed.
 
 ::
 
-    >>> add_integer(-2.9, -0.2)
-    -2
+    >>> add_integer(-4.2, -0.2)
+    -4
 
 Floating and non-floating point values can be combined.
 
@@ -62,13 +62,13 @@ If either argument is a non-integer and non-float, a TypeError is raised:
 
 ::
 
-    >>> add_integer("hello", 3)
+    >>> add_integer("string", 3)
     Traceback (most recent call last):
     TypeError: a must be an integer
 
 ::
 
-    >>> add_integer(2, "hello")
+    >>> add_integer(2, "string")
     Traceback (most recent call last):
     TypeError: b must be an integer
 
@@ -89,7 +89,7 @@ printed for the first argument.
 
 ::
 
-    >>> add_integer("hello", "there")
+    >>> add_integer("string", "String")
     Traceback (most recent call last):
     TypeError: a must be an integer
 
