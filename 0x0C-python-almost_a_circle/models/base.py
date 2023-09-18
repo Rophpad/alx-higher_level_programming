@@ -1,6 +1,7 @@
 #!usr/bin/python3
 """The Class Base module"""
 
+
 class Base:
     """The Class: Base"""
 
@@ -17,4 +18,3 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
- 
