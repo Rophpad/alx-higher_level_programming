@@ -96,5 +96,20 @@ class Rectangle(Base):
 
     def __str__(self):
         """String method"""
-        return f"[Rectangle] ({self.id}) {self.x}/{self.y} " \
-                f"- {self.width}/{self.height}"
+        return """f"[Rectangle] ({self.id}) {self.x}/{self.y} " \
+                f"- {self.width}/{self.height}" """
+
+    def update(self, *args, *kwargs):
+        """Update rectangle"""
+
+        if args and len(args) != 0:
+            attr_list = ["id", "width", "height", "x", "y"]
+            for i, value in enumerate(args):
+                if i < len(attr_list):
+                    setattr(self, attr_list[i], value)
+                else:
+                    for key, value in kwargs.items():
+                        if hasattr(self, key):
+                            setattr(self, key, value)
+                        else:
+                            raise ValueError(f"{key} is not attribute in this class")
