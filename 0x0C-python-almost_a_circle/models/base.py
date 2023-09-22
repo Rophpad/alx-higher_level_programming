@@ -109,3 +109,38 @@ class Base:
                     row[key] = int(row[key])
                 data.append(row)
         return list(map(lambda obj: cls.create(**obj), data))
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """Draw Rectangles and Squares using the turtle module."""
+        tle = turtle.Turtle()
+        tle.screen.bgcolor("#b7312c")
+        tle.pensize(3)
+        tle.shape("turtle")
+
+        tle.color("#ffffff")
+        for rect in list_rectangles:
+            tle.showturtle()
+            tle.up()
+            tle.goto(rect.x, rect.y)
+            tle.down
+            for i in range(2):
+                tle.forward(rect.width)
+                tle.left(90)
+                tle.forward(rect.height)
+                tle.left(90)
+            tle.hideturtle()
+            tle.color("#b5e3d8")
+            for sq in list_squares:
+                tle.showturtle()
+                tle.up()
+                tle.goto(sq.x, sq.y)
+                tle.down
+            for i in range(2):
+                tle.forward(sq.width)
+                tle.left(90)
+                tle.forward(sq.height)
+                tle.left(90)
+            tle.hideturtle()
+
+        turtle.exitonclick()
