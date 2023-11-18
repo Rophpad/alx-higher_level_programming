@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""
+""" lists all cities of a state
 """
 
 import sys
@@ -12,4 +12,5 @@ if __name__ == "__main__":
                  INNER JOIN `states` \
                  ON `cities`.`state_id` = `states`.`id` \
                  ORDER BY `cities`.`id`")
-    print(", ".join([city[2] for city in cur.fetchall() if city[4] == sys.argv[4]]))
+    print(", ".join([c[2] for c in cur.fetchall() if c[4] == sys.argv[4]]))
+    # c = city
